@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: first-pod2
+  namespace: first-k8s
+  labels:
+    app: first-app
+    env: dev
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    ports:
+    - containerPort: 4555
+  restartPolicy: Never
+  
