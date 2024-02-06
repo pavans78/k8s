@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: Job
+metadata: 
+  name: job
+spec:
+  completions: 3
+  parallelism: 2 
+  backOffLimit: 4 #no of retries to consider job as failed
+  completionMode: Indexed  # NonIndexed is by dafault
+  activeDeadlineSeconds: 600 #duration of the Job
+  ttlSecondsAfterFinished: 100 
+  template:
+    spec:
+      containers:
+      - name: math
+        image: ubuntu
+        command: ['expr', '3', '*', '2']
+      restartPolicy: Never
+  

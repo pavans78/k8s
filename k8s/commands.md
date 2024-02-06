@@ -38,13 +38,19 @@ k rollout history deployment/<deployment_name>
 
 k rollout undo deployments/<deployment_name>
 
-k rollout undo deployments/<deployment_name> --to-revision=1 
+k rollout undo deployments/<deployment_name> --to-revision=<specific_version> 
 
 k edit deployments/first-deployment 
 
 k set image deployment/first-deployment <container_name>=nginx:1.24
 
 k scale deployment/first-deployment --replicas=4
+
+# Replicaset
+
+k get|describe|delete rs/<rs_name>
+
+k autoscale rs <rs_name> --min=4 --max=10 --cpu=50
 
 
 
