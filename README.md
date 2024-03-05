@@ -1,1 +1,3 @@
-# k8s
+# Kubernetes Codes
+
+This repo contains learning examples of the kubernetes objects.
